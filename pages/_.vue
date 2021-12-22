@@ -4,6 +4,7 @@
       
       <div v-if="post">
           <h1>{{post.title ? post.title : post.slug}}</h1>     
+          <templatesPostChildren :post="post"></templatesPostChildren>
       </div>
   </div>
 </template>
