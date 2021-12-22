@@ -6,7 +6,11 @@
         v-for="child in children"
         :key="child.path"
       >
-        <nuxt-link :to="`/${child.path}`">{{ child.title ? child.title : child.slug }}</nuxt-link>
+        <nuxt-link :to="`/${child.path}`">
+          <component :is="child.omit ? 'del' : 'span'">
+            <span v-if="child.chapter">Chapter {{child.chapter}} - </span>{{ child.title ? child.title : child.slug }}
+          </component>
+        </nuxt-link>
       </div>
     </div>
   </div>
