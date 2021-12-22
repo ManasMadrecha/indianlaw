@@ -1,12 +1,20 @@
 <template>
   <div>
-      <nuxt-link to="/">Home</nuxt-link>
-      
-      <div v-if="post">
-          <h1>{{post.title ? post.title : post.slug}}</h1>     
-          <templatesPostChildren :post="post"></templatesPostChildren>
-          <NuxtContent :document="post"></NuxtContent>
-      </div>
+    
+    <templatesPostBreadcrumbs
+      :pathMatch="pathMatch"
+      v-if=" pathMatch"
+    ></templatesPostBreadcrumbs>
+
+    <div v-if="post">
+
+      <h1>{{post.title ? post.title : post.slug}}</h1>
+
+      <templatesPostChildren :post="post"></templatesPostChildren>
+
+      <NuxtContent :document="post"></NuxtContent>
+
+    </div>
   </div>
 </template>
 
@@ -27,14 +35,16 @@ export default {
     },
   },
   async fetch() {
-    let posts = await this.$content({ deep: true }).where({
+    let posts = await this.$content({ deep: true })
+      .where({
         path: {
           $regex: [
             this.pathMatch.slice(0, this.pathMatch.length - 1) + "$",
             "gi",
           ],
         },
-    }).fetch();
+      })
+      .fetch();
 
     this.post = posts.length ? posts[0] : {};
   },
