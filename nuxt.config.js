@@ -57,6 +57,7 @@ export default {
     markdown: {
       remarkPlugins: [
         ['remark-autolink-headings', { behavior: 'append' }],
+        ['remark-footnotes', { inlineNotes: true }]
       ]
     }
   },
