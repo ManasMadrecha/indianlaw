@@ -9,7 +9,7 @@
     <div v-if="children.length">
       <ul
         v-if="childrenGrouped"
-        class="!tw-list-none"
+        class="!tw-list-none !tw-pl-0"
       >
         <li
           v-for="(groupedArray, i) in childrenGrouped"
