@@ -1,15 +1,19 @@
 ---
-title: The Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act, 1989 
+title: SC and ST (Prevention of Atrocities) Act, 1989
+
 actno: 33
 year: 1989 
 date: 11-09-1989
+shorttitle: The Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act, 1989 
 longtitle: An Act to prevent the commission of offences of atrocities against the members of the Scheduled Castes and the Scheduled Tribes, to provide for Special Courts for the trial of such offences and for the relief and rehabilitation of the victims of such offences and for matters connected therewith or incidental thereto. 
 
 ---
 
 **FORMATTING PENDING**
 
-An Act to prevent the commission of offences of atrocities against the members of the Scheduled Castes and the Scheduled Tribes, to provide for Special Courts for the trial of such offences and for the relief and rehabilitation of the victims of such offences and for matters connected therewith or incidental thereto. 
+**Short Title**: The Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act, 1989
+
+**Long Title**: An Act to prevent the commission of offences of atrocities against the members of the Scheduled Castes and the Scheduled Tribes, to provide for Special Courts for the trial of such offences and for the relief and rehabilitation of the victims of such offences and for matters connected therewith or incidental thereto. 
 
 BE it enacted by Parliament in the 40th Year of the Republic of India as Follows: 
 

@@ -1,10 +1,10 @@
 ---
-title: The Maintenance and Welfare Of Parents and Senior Citizens Act, 2007
-
+title: Parents and Senior Citizens Act, 2007
 actno: 56
 year: 2007
 date: 26-12-2007
 
+shorttitle: The Maintenance and Welfare Of Parents and Senior Citizens Act, 2007
 longtitle: An Act to provide for more effective provisions for the maintenance and welfare of parents and senior citizens guaranteed and recognised under the Constitution and for matters connected therewith or incidental thereto.
 
 ---
