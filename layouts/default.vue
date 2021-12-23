@@ -14,7 +14,10 @@
       ></templatesPostBreadcrumbs>
     </div>
 
-    <div class="tw-grid tw-grid-cols-5" style="scroll-behavior: smooth;" >
+    <div
+      class="tw-grid tw-grid-cols-5"
+      style="scroll-behavior: smooth;"
+    >
 
       <aside class="tw-transform-gpu tw-duration-300 tw-border-r tw-border-gray-300 tw-max-h-[calc(100vh-3rem)] tw-overflow-auto tw-sticky tw-top-8 tw-pb-6">
         <templatesPostSidebarSiblings
@@ -82,7 +85,12 @@ export default {
         this.siblings = await this.$content({ deep: true })
           .without(["body"])
           .where({
-            dir: this.post.dir,
+            $and: [
+              {
+                dir: this.post.dir,
+              },
+              { show: { $ne: false } },
+            ],
           })
           .fetch();
 
