@@ -1,7 +1,8 @@
 ---
 title: Wildlife Protection Act, 1972
+show: false
 
-longtitle: Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id, eligendi consequatur iure quaerat exercitationem nihil dolorem enim at aliquam voluptatem accusamus iusto sed! Quod id saepe consequuntur accusantium deleniti?
+longtitle: 
 
 year: 1972
 
