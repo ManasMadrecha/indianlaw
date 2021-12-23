@@ -1,3 +1,85 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+/* --app-color: 'emerald' */
+
+::-webkit-scrollbar {
+    @apply tw-w-4 tw-h-2;
+}
+::-webkit-scrollbar-track {
+    @apply tw-rounded-l-lg tw-bg-gradient-to-br tw-from-gray-50 tw-to-gray-200;
+}
+::-webkit-scrollbar-thumb {
+    @apply tw-bg-gradient-to-br tw-from-emerald-100 tw-to-emerald-200;
+    @apply hover:tw-from-emerald-200 hover:tw-to-emerald-400;
+}
+
+.nuxt-content {
+    h1, h2, h3, h4, h5, h6, ol, ul, dl, p, dd, table, details, figure, blockquote, hr {
+        @apply tw-mb-3 md:tw-mb-6;
+    }
+
+    h2, h3, h4, h5, h6 {
+        @apply md:tw-mt-8 tw-mt-4 tw-font-medium tw-pb-2 tw-border-b tw-border-gray-300 tw-text-gray-600;
+        a[aria-hidden] {
+            @apply tw-no-underline;
+            @apply tw-text-gray-200 hover:tw-text-emerald-400;
+            @apply after:tw-content-['_#'] after:tw-text-xl
+        }
+    }
+
+    h2 {
+        @apply tw-text-2xl md:tw-text-4xl;
+    }
+
+    h3 {
+        @apply tw-text-gray-500 tw-text-xl md:tw-text-3xl;
+    }
+
+    h4 {
+        @apply tw-text-gray-500 tw-text-lg md:tw-text-2xl;
+    }
+
+    h5, h6 {
+        @apply tw-text-gray-500 tw-text-lg md:tw-text-xl;
+    }
+
+    p, li {
+        @apply tw-leading-7;
+    }
+
+    a {
+        @apply tw-underline;
+    }
+
+    ul {
+        @apply tw-list-disc;
+    }
+
+    ol {
+        @apply tw-list-decimal;
+    }
+
+    ol, ul {
+        @apply tw-pl-6  marker:tw-text-gray-500;
+        li {
+            > ol, ul {
+                @apply tw-mb-3;
+            }
+            li {
+                ul {
+                    list-style-type: circle
+                }
+            }
+        }
+    }
+}
+
+@layer base {
+    a {
+        @apply hover:tw-text-emerald-600 hover:tw-underline tw-underline-offset-2 tw-decoration-emerald-300;
+        @apply tw-transform-gpu tw-duration-300
+    }
+}
+
