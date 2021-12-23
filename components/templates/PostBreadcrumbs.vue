@@ -1,24 +1,28 @@
 <template>
-  <div>
-    <div v-if="posts.length">
-      <div
-        v-for="post in posts"
+  <nav>
+    <ul v-if="posts.length" class="tw-max-w-[95vw] tw-overflow-x-auto tw-whitespace-nowrap">
+      <li
+        v-for="(post, i) in posts"
         :key="post.text"
+        class="tw-capitalize tw-inline-block"
       >
-        <nuxt-link :to="post.to">{{ post.text }}</nuxt-link>
-      </div>
-    </div>
+        <nuxt-link :to="post.to"
+        class="tw-mx-1 tw-border-gray-100 tw-text-sm md:tw-text-lg"
+        :class="{'tw-text-gray-400 tw-border-none hover:tw-text-gray-400 hover:tw-no-underline' : i === posts.length - 1}">{{ post.text }}</nuxt-link>
+        <span
+          class="tw-text-gray-400 tw-text-sm md:tw-text-lg"
+          v-if="i < posts.length - 1"
+        >⇒&nbsp;
+        </span>
+      </li>
+    </ul>
 
-  </div>
+  </nav>
 </template>
 
 <script>
 export default {
   props: {
-    post: {
-      type: Object,
-      required: true,
-    },
     pathMatch: {
       type: String,
       required: true,
