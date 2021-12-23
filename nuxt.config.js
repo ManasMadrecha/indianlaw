@@ -53,7 +53,12 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
-    dir: 'content-indianlaw'
+    dir: 'content-indianlaw',
+    markdown: {
+      remarkPlugins: [
+        ['remark-autolink-headings', { behavior: 'append' }],
+      ]
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
