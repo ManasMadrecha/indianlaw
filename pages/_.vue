@@ -1,25 +1,28 @@
 <template>
   <div>
     
-    <templatesPostBreadcrumbs
-      :pathMatch="pathMatch"
-      v-if=" pathMatch"
-    ></templatesPostBreadcrumbs>
-
-    <div v-if="post">
-
-      <h1>{{post.title ? post.title : post.slug}}</h1>
-
-      <templatesPostChildren :post="post"></templatesPostChildren>
+    <div
+      v-if="$fetchState.pending"
+      class="tw-my-48 tw-text-xl tw-text-blue-800 tw-bg-pink-50 tw-p-4 tw-text-center tw-font-medium"
+    >
+      Fetching... 💖 Wait for a few seconds 😊
+    </div>
+    
+    <article v-else>
+      <h1 class="tw-text-center tw-text-2xl md:tw-text-4xl tw-leading-relaxed md:tw-mb-6 tw-mb-3">{{post.title ? post.title : post.slug}}</h1>
 
       <NuxtContent :document="post"></NuxtContent>
+    </article>
 
-    </div>
   </div>
 </template>
 
 <script>
+import PostChildren from "~/components/templates/PostChildren.vue"
+
 export default {
+  name: "DynamicPage",
+  components: {PostChildren},
   data() {
     return {
       post: null,
@@ -53,3 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 </style>
+
+
+
+
