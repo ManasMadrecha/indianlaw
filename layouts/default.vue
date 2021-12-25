@@ -24,14 +24,36 @@
           v-if="siblings.length && post"
           :siblings="siblings"
           :post="post"
-          :class="showAside ? 'tw-col-span-1' : 'tw-translate-x-[calc(-100%+1px)] tw-hidden'"
+          :class="showAside ? 'tw-col-span-1' : 'tw-hidden'"
         ></templatesPostSidebarSiblings>
       </aside>
 
       <main
-        class="tw-transform-gpu tw-duration-300 md:tw-pr-4 md:tw-pl-8 md:tw-py-8 tw-pr-2 tw-pl-4 tw-py-4"
+        class="tw-transform-gpu tw-duration-300 tw-px-4 md:tw-px-8 md:tw-py-8 tw-py-4"
         :class="showAside ? 'tw-col-span-4' : 'tw-col-span-5'"
       >
+        <div
+          v-if="prev || next"
+          class="tw-flex tw-flex-wrap tw-justify-between tw-items-stretch md:tw-mb-6 tw-mb-3"
+        >
+          <nuxt-link
+            v-if="prev"
+            :to="prev.path"
+            class="tw-w-[40%] !tw-no-underline tw-bg-slate-50 tw-px-4 tw-py-2 hover:tw-translate-x-[-0.25rem]"
+          >
+            
+            {{prev.title ? prev.title : prev.slug}}
+          </nuxt-link>
+          <nuxt-link
+            v-if="next"
+            :to="next.path"
+            :class="{'tw-ml-auto' : this.prev == null}"
+            class="tw-w-[40%] !tw-no-underline tw-bg-slate-50 tw-px-4 tw-py-2 hover:tw-translate-x-1"
+          >
+            {{next.title ? next.title : next.slug}}
+            
+          </nuxt-link>
+        </div>
         <Nuxt
           keep-alive
           :keep-alive-props="{ max: 10 }"
@@ -53,8 +75,12 @@ export default {
   data() {
     return {
       showAside: true,
+
+      // Fetch Content
       post: null,
       siblings: [],
+      prev: null,
+      next: null,
     };
   },
   computed: {
@@ -94,9 +120,30 @@ export default {
           })
           .fetch();
 
-        this.siblings.sort(function (a, b) {
-          return Collator.compare(a.path, b.path);
-        });
+        if (this.siblings.length) {
+          this.siblings.sort(function (a, b) {
+            return Collator.compare(a.path, b.path);
+          });
+
+          // NEIGHBOURS
+          const postIndex = this.siblings.findIndex((sibling) => {
+            return sibling.path === this.post.path;
+          });
+
+          if (postIndex > 0) {
+            this.prev = this.siblings.filter((sibling, i) => {
+              return i === postIndex - 1;
+            });
+            this.prev = this.prev && this.prev.length ? this.prev[0] : null;
+          } else this.prev = null;
+
+          if (postIndex < this.siblings.length) {
+            this.next = this.siblings.filter((sibling, i) => {
+              return i === postIndex + 1;
+            });
+            this.next = this.next && this.next.length ? this.next[0] : null;
+          } else this.next = null;
+        }
       }
     },
   },
