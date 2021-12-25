@@ -49,32 +49,21 @@
         class="tw-transform-gpu tw-duration-300 tw-px-4 md:tw-px-8 md:tw-py-8 tw-py-4"
         :class="showAside ? 'tw-col-span-4' : 'tw-col-span-5'"
       >
-        <div
+        <templatesPostNeighbours
           v-if="prev || next"
-          class="tw-flex tw-flex-wrap tw-justify-between tw-items-stretch md:tw-mb-6 tw-mb-3"
-        >
-          <nuxt-link
-            v-if="prev"
-            :to="prev.path"
-            class="tw-w-[40%] !tw-no-underline tw-bg-slate-50 tw-px-4 tw-py-2 hover:tw-translate-x-[-0.25rem]"
-          >
-            
-            {{prev.title ? prev.title : prev.slug}}
-          </nuxt-link>
-          <nuxt-link
-            v-if="next"
-            :to="next.path"
-            :class="{'tw-ml-auto' : this.prev == null}"
-            class="tw-w-[40%] !tw-no-underline tw-bg-slate-50 tw-px-4 tw-py-2 hover:tw-translate-x-1"
-          >
-            {{next.title ? next.title : next.slug}}
-            
-          </nuxt-link>
-        </div>
+          :prev="prev"
+          :next="next"
+        ></templatesPostNeighbours>
         <Nuxt
           keep-alive
           :keep-alive-props="{ max: 10 }"
+          class="md:tw-min-h-screen"
         ></Nuxt>
+        <templatesPostNeighbours
+          v-if="prev || next"
+          :prev="prev"
+          :next="next"
+        ></templatesPostNeighbours>
       </main>
 
     </div>
@@ -92,14 +81,7 @@ export default {
   data() {
     return {
       // Theme
-      themeColors: [
-        "amber",
-        "emerald",
-        "cyan",
-        "sky",
-        "purple",
-        "pink",
-      ],
+      themeColors: ["amber", "emerald", "cyan", "sky", "purple", "pink"],
       themeColorIs: "sky",
 
       // Sidebar
