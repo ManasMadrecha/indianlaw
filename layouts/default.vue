@@ -92,7 +92,28 @@ export default {
       }
     },
   },
+  beforeMount() {
+    window.addEventListener("keydown", this.handleKeydown, null);
+  },
+  beforeDestroy() {
+    window.removeEventListener("keydown", this.handleKeydown);
+  },
   methods: {
+    // https://stackoverflow.com/questions/52997529/vue-js-arrowkey-binding-issues
+    handleKeydown(e) {
+      switch (e.keyCode) {
+        case 37: // Left arrow
+          if (this.prev) {
+            this.$router.push({ path: this.prev.path });
+          } else return;
+          break;
+        case 39: // Right arrow
+          if (this.next) {
+            this.$router.push({ path: this.next.path });
+          } else return;
+          break;
+      }
+    },
     async fetchPost() {
       let posts = await this.$content({ deep: true })
         .where({
