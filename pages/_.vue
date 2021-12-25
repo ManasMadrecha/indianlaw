@@ -1,28 +1,22 @@
 <template>
-  <div>
-    
-    <div
-      v-if="$fetchState.pending"
-      class="tw-my-48 tw-text-xl tw-text-blue-800 tw-bg-pink-50 tw-p-4 tw-text-center tw-font-medium"
-    >
-      Fetching... 💖 Wait for a few seconds 😊
-    </div>
-    
-    <article v-else>
-      <h1 class="tw-text-center tw-text-2xl md:tw-text-4xl tw-leading-relaxed md:tw-mb-6 tw-mb-3">{{post.title ? post.title : post.slug}}</h1>
+  <article v-if="post">
+    <h1
+      v-if="post.showtitle !== false"
+      class="tw-text-center tw-text-2xl md:tw-text-4xl tw-leading-relaxed md:tw-mb-6 tw-mb-3"
+    >{{post.title ? post.title : post.slug}}</h1>
 
-      <NuxtContent :document="post"></NuxtContent>
-    </article>
+    <NuxtContent :document="post"></NuxtContent>
 
-  </div>
+  </article>
 </template>
 
 <script>
-import PostChildren from "~/components/templates/PostChildren.vue"
+import PostChildren from "~/components/templates/PostChildren.vue";
 
 export default {
   name: "DynamicPage",
-  components: {PostChildren},
+  components: { PostChildren },
+  transition: "slide-bottom",
   data() {
     return {
       post: null,
@@ -49,14 +43,21 @@ export default {
       })
       .fetch();
 
-    this.post = posts.length ? posts[0] : {};
+    this.post = posts.length ? posts[0] : null;
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.slide-bottom-enter,
+.slide-bottom-leave-to {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+}
 </style>
-
-
-
 
