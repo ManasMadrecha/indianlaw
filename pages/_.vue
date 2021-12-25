@@ -61,3 +61,18 @@ export default {
 }
 </style>
 
+<style lang="scss">
+.amend {
+  &-ins {
+    @apply tw-bg-emerald-100/50;
+  }
+  &-omit {
+    @apply tw-line-through;
+    @apply tw-bg-red-100/50;
+  }
+  &-subs {
+    @apply tw-bg-yellow-100/50;
+  }
+}
+</style>
+
