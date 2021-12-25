@@ -1,9 +1,18 @@
 <template>
   <div>
-    <div>.</div>
+    <div class="tw-my-3 tw-mx-2">
+      <input
+        type="search"
+        v-model="query"
+        autofocus
+        id="filter-siblings"
+        class="filter-siblings-input tw-border focus:tw-border-2 focus:tw-shadow-md tw-w-full tw-py-1 tw-px-2 tw-rounded-md tw-outline-none"
+      >
+      <div class="tw-text-xs tw-text-slate-400">{{filteredSiblings.length}} / {{siblings.length}}</div>
+    </div>
     <ul class="siblings">
       <li
-        v-for="sibling in siblings"
+        v-for="sibling in filteredSiblings"
         :key="sibling.path"
         class="tw-mb-2 tw-text-sm"
       >
@@ -48,6 +57,36 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      query: "",
+    };
+  },
+  computed: {
+    filteredSiblings() {
+      if (this.query) {
+        let querySplitArr = [];
+        querySplitArr = this.query.split(" ");
+
+        return this.siblings.filter((sibling) => {
+          let isSlugThere = false;
+          let isTitleThere = false;
+          let isTitleLowerThere = false;
+
+          return querySplitArr.every((q) => {
+            isSlugThere = sibling.slug.toLowerCase().includes(q);
+
+            if (sibling.title) {
+              isTitleThere = sibling.title.includes(q);
+              isTitleLowerThere = sibling.title.toLowerCase().includes(q);
+            }
+
+            return isSlugThere || isTitleThere || isTitleLowerThere;
+          });
+        });
+      } else return this.siblings;
+    },
+  },
 };
 </script>
 
@@ -63,6 +102,9 @@ export default {
 
 @each $theme-color in $theme-colors {
   .theme-#{$theme-color} {
+    .filter-siblings-input {
+      @apply tw-border-#{$theme-color}-200;
+    }
     .siblings {
       a {
         @apply hover:tw-bg-#{$theme-color}-50;
