@@ -1,0 +1,22 @@
+/* THIS FILE IS ONLY FOR TESTING PURPOSES. */
+
+/* @debug $app-color; */
+
+/* $app-colors: ('blue', 'pink'); */
+
+@function text-color($color, $colornumber) {
+    @return "tw-bg-#{$color}-#{$colornumber}"
+}
+
+/* body { */
+    /* @extend text-color(blue, 100); */
+/* } */
+
+
+@mixin theme-generator {
+    @each $theme-color in $theme-colors {
+        .theme-#{$theme-color} {
+            @content;
+        }
+    }
+}

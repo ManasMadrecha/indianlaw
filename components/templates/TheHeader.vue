@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-flex tw-justify-around tw-items-center tw-bg-gradient-to-br tw-from-white tw-to-emerald-50 tw-h-12">
+  <div class="header-container">
     <div>
       <nuxt-link to="/">Indian Law</nuxt-link>
     </div>
@@ -15,4 +15,15 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.header-container {
+  @apply tw-flex tw-justify-around tw-items-center tw-bg-gradient-to-br tw-from-white tw-h-12;
+}
+
+@each $theme-color in $theme-colors {
+  .theme-#{$theme-color} {
+    .header-container {
+      @apply tw-to-#{$theme-color}-50; 
+    }
+  }
+}
 </style>

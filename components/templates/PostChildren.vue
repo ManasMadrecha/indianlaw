@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="post-children">
     <div
       class="tw-mb-3"
       v-if="$scopedSlots.header"
@@ -12,20 +12,20 @@
         class="!tw-list-none !tw-pl-0"
       >
         <li
-          v-for="(groupedArray, i) in childrenGrouped"
-          :key="i"
+          v-for="(groupedArray) in childrenGrouped"
+          :key="groupedArray[0].path"
         >
           <details open>
             <summary v-if="group"><span class="tw-capitalize">{{groupby}}</span> {{Object.keys(group).find(item => item == groupedArray[0][groupby])}}</summary>
-
             <ul>
               <li
                 v-for="child in groupedArray"
                 :key="child.path"
+                class="tw-mb-2"
               >
                 <nuxt-link
                   :to="`${child.path}`"
-                  class="!tw-no-underline tw-text-emerald-600 hover:tw-text-emerald-400"
+                  class="child-link"
                 >
                   <component :is="child.omit ? 'del' : 'span'">
                     {{ child.title ? child.title : child.slug }}
@@ -44,7 +44,7 @@
         >
           <nuxt-link
             :to="`${child.path}`"
-            class="!tw-no-underline tw-text-emerald-600 hover:tw-text-emerald-400"
+            class="child-link"
           >
             <component :is="child.omit ? 'del' : 'span'">
               <span v-if="child.chapter">Chapter {{child.chapter}} - </span>{{ child.title ? child.title : child.slug }}
@@ -122,7 +122,9 @@ export default {
         // console.log(this.group);
       } else {
         this.children = this.children.map((child) => {
-          child[groupByProp] = child[groupByProp] ? child[groupByProp] : "Na";
+          child[groupByProp] = child[groupByProp]
+            ? String(child[groupByProp])
+            : "Na";
           return child;
         });
 
@@ -130,6 +132,10 @@ export default {
           this.children,
           (child) => child[groupByProp]
         );
+
+        // this.childrenGrouped.sort((groupedA, groupedB) => {
+        //   return Collator.compare(groupedA[0][groupByProp], groupedB[0][groupByProp]);
+        // })
       }
     }
   },
@@ -137,4 +143,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.post-children {
+  .child-link {
+    @apply tw-no-underline hover:tw-underline;
+  }
+}
+@each $theme-color in $theme-colors {
+  .theme-#{$theme-color} {
+    .post-children {
+      .child-link {
+        @apply tw-text-#{$theme-color}-700 hover:tw-text-#{$theme-color}-500;
+      }
+    }
+  }
+}
 </style>
+

@@ -1,9 +1,12 @@
 <template>
-  <div class="tw-text-gray-700 tw-font-['Quicksand',_'Segoe_UI']">
+  <div
+    class="tw-text-gray-800 tw-font-['Quicksand',_'Segoe_UI']"
+    :class="`theme-${themeColorIs}`"
+  >
 
     <templatesTheHeader></templatesTheHeader>
 
-    <div class="tw-sticky tw-top-0 tw-z-10 tw-bg-white tw-flex tw-justify-start tw-items-center tw-gap-2 tw-border-b tw-py-2">
+    <div class="tw-sticky tw-top-0 tw-z-10 tw-bg-white tw-flex tw-justify-between tw-items-center tw-gap-2 tw-border-b tw-py-2">
       <div>
         <button @click="showAside = !showAside">🧾</button>
       </div>
@@ -12,6 +15,20 @@
         :pathMatch="pathMatch"
         v-if=" pathMatch"
       ></templatesPostBreadcrumbs>
+
+      <div>
+        <select
+          v-model="themeColorIs"
+          class="tw-border tw-border-blue-300"
+        >
+          <option
+            v-for="color in themeColors"
+            :key="color"
+            :value="color"
+            class="tw-capitalize"
+          >{{color}}</option>
+        </select>
+      </div>
     </div>
 
     <div
@@ -74,6 +91,18 @@ export default {
   name: "DefaultLayout",
   data() {
     return {
+      // Theme
+      themeColors: [
+        "amber",
+        "emerald",
+        "cyan",
+        "sky",
+        "purple",
+        "pink",
+      ],
+      themeColorIs: "sky",
+
+      // Sidebar
       showAside: true,
 
       // Fetch Content
@@ -84,6 +113,10 @@ export default {
     };
   },
   computed: {
+    themeColor() {
+      let theme = "pink";
+      return (this.themeColorIs = theme);
+    },
     pathMatch() {
       if (this.$route && this.$route.params && this.$route.params.pathMatch) {
         return this.$route.params.pathMatch.endsWith("/")
