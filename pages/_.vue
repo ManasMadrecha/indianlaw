@@ -74,5 +74,40 @@ export default {
     @apply tw-bg-yellow-100/50;
   }
 }
+
+.nuxt-content {
+  details {
+    --spacing: 1rem;
+    @apply tw-border;
+    summary {
+      @apply tw-bg-gradient-to-br tw-from-white;
+      @apply tw-px-[var(--spacing)] tw-py-2 tw-cursor-pointer;
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        @apply tw-text-base tw-my-0 tw-inline-block tw-border-0 tw-pb-0;
+      }
+    }
+  }
+  details[open] {
+    @apply tw-px-[var(--spacing)];
+    summary {
+      @apply tw-mb-[var(--spacing)] tw-mx-[calc(var(--spacing)_*_-1)];
+    }
+  }
+}
+@each $theme-color in $theme-colors {
+  .theme-#{$theme-color} {
+    .nuxt-content {
+      details {
+        summary {
+          @apply tw-to-#{$theme-color}-50 marker:tw-text-#{$theme-color}-700;
+        }
+      }
+    }
+  }
+}
 </style>
 
