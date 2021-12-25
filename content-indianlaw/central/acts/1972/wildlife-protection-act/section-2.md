@@ -3,6 +3,8 @@ title: Section 2 - Definitions
 chapter: 1
 ---
 
+## Bare Act 
+
 In this Act, unless the context otherwise requires,—
 
 ### Section 2(1) animal 
@@ -29,54 +31,88 @@ In this Act, unless the context otherwise requires,—
 
 “Chief Wild Life Warden’ means the person appointed as such under clause (a) of sub-section (1) of section 4;
 
-### (7A) circus
+### Section 2(7A) circus
 
-[(7A) “circus” means an establishment, whether stationary or mobile, where animals are kept or used wholly or mainly for the purpose of performing tricks or manoeuvres;]
+<p class="amend-ins">[(7A) “circus” means an establishment, whether stationary or mobile, where animals are kept or used wholly or mainly for the purpose of performing tricks or manoeuvres;]</p>
 
-~~(8)~~
+### Section 2(8)
 
-[(9) “Collector” means the chief officer in charge of the revenue administration of a district or any other officer not below the rank of a Deputy Collector as may be appointed by the State Government under section 18B in this behalf;]
+<p class="amend-omit">(8)</p>
 
-(10) “commencement of this Act”, in relation to—
+### Section 2(9) Collector
 
-(a) a State, means commencement of this Act in that State,
+<p class="amend-subs">[(9) “Collector” means the chief officer in charge of the revenue administration of a district or any other officer not below the rank of a Deputy Collector as may be appointed by the State Government under section 18B in this behalf;]</p>
 
-(b) any provision of this Act, means the commencement of that provision In the concerned
+### Section 2(10) commencement of this Act 
+
+“commencement of this Act”, in relation to—
+
+- (a) a State, means commencement of this Act in that State,
+
+- (b) any provision of this Act, means the commencement of that provision In the concerned
 State;
+
+### Section 2(11) dealer
 
 [(11) “dealer” in relation to any captive animal, animal article, trophy, uncured trophy, meat or specified plant, means a person, who carries on the business of buying or selling any such animal or article, and includes a person who undertakes business in any single transaction;]
 
-(12) “Director” means the person appointed as Director of Wild Life Preservation under clause (a) of sub-section (1) of section 3;
+### Section 2(12) Director 
+
+“Director” means the person appointed as Director of Wild Life Preservation under clause (a) of sub-section (1) of section 3;
+
+### Section 2(12A) Forest officer
 
 [(12A) “Forest officer” means the Forest officer appointed under clause (2) of section 2 of the Indian Forest Act, 1927 (16 of 1927) or under any other Act for the time being in force in a State;
 
+### Section 2(12B) forest produce
+
 (12B) “forest produce” shall have the same meaning as in sub-clause (b) of clause (4) of section 2 of the Indian Forest Act, 1927 (16 of 1927);]
 
-~~(13)~~
+### Section 2(13)
 
-(14) “Government property” means any property referred to in section 394[or section 17H];
+<p class="amend-omit">(13)</p>
 
-(15) “habitat” includes land, water or vegetation which is the natural home of any wild animal;
+### Section 2(14) Government property
 
-(16) “hunting”, with its grammatical variations and cognate expressions, includes,—
+“Government property” means any property referred to in section 394[or section 17H];
 
-[(a) killing or poisoning of any wild animal or captive animal and every attempt to do so;
+### Section 2(15) habitat
 
-(b) capturing, coursing, snaring, trapping, driving or baiting any wild or captive animal and every attempt to do so;]
+“habitat” includes land, water or vegetation which is the natural home of any wild animal;
 
-(c) injuring or destroying or taking any part of the body of any such animal or, in the case of wild birds or reptiles, damaging the eggs of such birds or reptiles, or disturbing the eggs or nests of such birds or reptiles;
+### Section 2(16) hunting 
 
-(17) “land” includes canals, creeks and other water channels, reservoirs, rivers, streams and lakes, whether artificial or natural, 6[marshes and wetlands and also includes boulders and rocks];
+“hunting”, with its grammatical variations and cognate expressions, includes,—
 
-(18) “licence” means a licence granted under this Act;
+- [(a) killing or poisoning of any wild animal or captive animal and every attempt to do so;
+
+- (b) capturing, coursing, snaring, trapping, driving or baiting any wild or captive animal and every attempt to do so;]
+
+- (c) injuring or destroying or taking any part of the body of any such animal or, in the case of wild birds or reptiles, damaging the eggs of such birds or reptiles, or disturbing the eggs or nests of such birds or reptiles;
+
+### Section 2(17) land
+
+“land” includes canals, creeks and other water channels, reservoirs, rivers, streams and lakes, whether artificial or natural, 6[marshes and wetlands and also includes boulders and rocks];
+
+### Section 2(18) license
+
+“licence” means a licence granted under this Act;
+
+### Section 2(18A) livestock
 
 [(18A) “livestock” means farm animals and includes buffaloes, bulls, bullocks, camels, cows, donkeys, goats, sheep, horses, mules, yaks, pigs, ducks, geese, poultry and their young but does not include any animal specified in Schedules I to V;]
 
-[(19) “manufacturer” means a person who manufactures articles from any animal or plant specified in Schedules I to V and VI, as the case may be;
+### Section 2(19) manufacturer
 
-(20) “meat” includes blood, bones, sinew, eggs, shell or carapace, fat and flesh with or without skin, whether raw or cooked, of any wild animal or captive animal, other than a vermin;
+[“manufacturer” means a person who manufactures articles from any animal or plant specified in Schedules I to V and VI, as the case may be;
 
-(20A) “National Board” means the National Board for Wild Life constituted under section 5A;]
+### Section 2(20) meat 
+
+“meat” includes blood, bones, sinew, eggs, shell or carapace, fat and flesh with or without skin, whether raw or cooked, of any wild animal or captive animal, other than a vermin;
+
+### Section 2(20A) National Board 
+
+“National Board” means the National Board for Wild Life constituted under section 5A;]
 
 (21) “National Park” means an area declared, whether under section 35 or section 38, or deemed, under sub-section (3) of section 66, to be declared, as a National Park;
 
