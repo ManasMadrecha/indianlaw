@@ -11,7 +11,7 @@
       v-if="post.showtoc !== false && post.toc && post.toc.length > 1"
       class="md:tw-flex tw-flex-row-reverse"
     >
-      <section class="md:tw-w-[20%] tw-shrink-0 md:tw-sticky md:tw-top-10 md:tw-max-h-[90vh] tw-max-h-40 tw-overflow-auto md:tw-px-1 tw-px-2 md:tw-pb-8">
+      <section class="toc-section-scrollactivemethod md:tw-w-[20%] tw-shrink-0 md:tw-sticky md:tw-top-10 md:tw-max-h-[90vh] tw-max-h-40 tw-overflow-auto md:tw-px-1 tw-px-2 md:tw-pb-8">
         <templatesPostToc :post="post"></templatesPostToc>
       </section>
 
