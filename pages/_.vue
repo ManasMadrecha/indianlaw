@@ -2,10 +2,31 @@
   <article v-if="post">
     <h1
       v-if="post.showtitle !== false"
-      class="tw-text-center tw-text-2xl md:tw-text-4xl tw-leading-relaxed md:tw-mb-6 tw-mb-3"
-    >{{post.title ? post.title : post.slug}}</h1>
+      class="tw-px-4 tw-text-center tw-text-2xl md:tw-text-4xl tw-leading-relaxed md:tw-mb-6 tw-mb-3"
+    >
+      {{post.title ? post.title : post.slug}}
+    </h1>
 
-    <NuxtContent :document="post"></NuxtContent>
+    <div
+      v-if="post.showtoc !== false && post.toc && post.toc.length > 1"
+      class="md:tw-flex tw-flex-row-reverse"
+    >
+      <section class="md:tw-w-[20%] tw-shrink-0 md:tw-sticky md:tw-top-10 md:tw-max-h-[90vh] tw-max-h-40 tw-overflow-auto md:tw-px-1 tw-px-2 md:tw-pb-8">
+        <templatesPostToc :post="post"></templatesPostToc>
+      </section>
+
+      <NuxtContent
+        :document="post"
+        class="md:tw-pr-4 md:tw-pl-6 tw-px-2"
+      >
+      </NuxtContent>
+    </div>
+    <NuxtContent
+      v-else
+      :document="post"
+      class="md:tw-pr-4 md:tw-pl-6 tw-px-2"
+    >
+    </NuxtContent>
 
   </article>
 </template>

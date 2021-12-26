@@ -22,24 +22,6 @@
         >
           {{sibling.title ? sibling.title : sibling.slug}}
         </nuxt-link>
-        <ul
-          v-if="post && post.path === sibling.path && post.toc && post.toc.length"
-          class="tw-mt-1 tw-pl-2 tw-text-sm tw-border-b tw-pb-2"
-        >
-          <li
-            v-for="heading in post.toc"
-            :key="heading.id"
-            class="tw-mb-1"
-            :class="{'tw-pl-2': heading.depth === 3, 'tw-pl-4' : heading.depth === 4}"
-          >
-            <a
-              :href="`#${heading.id}`"
-              class="hover:tw-text-gray-700"
-            >
-              {{heading.text}}
-            </a>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>
