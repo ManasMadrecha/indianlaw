@@ -19,7 +19,7 @@
     "@mdi/js": "^6.5.95",
     "@nuxtjs/style-resources": "^1.2.1",
     "@nuxtjs/tailwindcss": "^4.2.1",
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.6",
     "postcss": "^8.4.5",
     "sass": "^1.43.4",
     "sass-loader": "^10.2.0",
