@@ -20,7 +20,7 @@
     "@nuxtjs/style-resources": "^1.2.1",
     "@nuxtjs/tailwindcss": "^4.2.1",
     "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.17",
     "sass": "^1.43.4",
     "sass-loader": "^10.2.0",
     "vue-scrollactive": "^0.9.3"
